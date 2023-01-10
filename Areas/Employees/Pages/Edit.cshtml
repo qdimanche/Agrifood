@@ -1,0 +1,29 @@
+@page
+@model Agrifood.Areas.Employees.Pages.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Employee</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+
+            <partial name="~/Views/Shared/EditorTemplates/Employee.cshtml" model="@Model.Employee" />
+
+            <div class="form-group mt-2">
+                <input type="submit" value="Enregistrer" class="btn btn-primary" />
+                <a class="btn btn-success" asp-page="./Index">Retour à la liste</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
